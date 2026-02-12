@@ -4,7 +4,7 @@ body {
     padding: 0;
     line-height: 1.6;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #333;
+    color: #333
 }
 
 header {
@@ -12,32 +12,37 @@ header {
     color: #fff;
     padding: 1.5rem 0;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
 }
 
 .header-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 1rem
 }
 
 .header-logo {
     width: 80px;
     height: 80px;
     object-fit: contain;
-    animation: spin 20s linear infinite;
+    animation: spin 20s linear infinite
 }
 
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)
 }
 
 nav {
@@ -46,7 +51,7 @@ nav {
     background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
     padding: 0.5rem;
     flex-wrap: wrap;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
 }
 
 nav a {
@@ -56,13 +61,13 @@ nav a {
     margin: 0.2rem;
     border-radius: 25px;
     transition: all 0.3s ease;
-    font-weight: 500;
+    font-weight: 500
 }
 
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
 }
 
 main {
@@ -72,14 +77,14 @@ main {
     background: #fff;
     min-height: 80vh;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2)
 }
 
 main h2 {
     color: #1e3c72;
     border-bottom: 3px solid #667eea;
     padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem
 }
 
 footer {
@@ -88,16 +93,15 @@ footer {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: #fff;
     margin-top: 2rem;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1)
 }
 
-/* Logo Page Specifics */
 .logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60vh;
-    flex-direction: column;
+    flex-direction: column
 }
 
 .big-logo {
@@ -105,27 +109,33 @@ footer {
     height: 400px;
     object-fit: contain;
     animation: pulse 3s ease-in-out infinite;
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3))
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+
+    0%,
+    100% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.05)
+    }
 }
 
 .logo-container p {
     font-size: 1.5rem;
     color: #1e3c72;
     margin-top: 2rem;
-    font-weight: 600;
+    font-weight: 600
 }
 
-/* Gallery Grid */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
-    padding: 1rem 0;
+    padding: 1rem 0
 }
 
 .gallery img {
@@ -135,40 +145,41 @@ footer {
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    cursor: pointer;
+    cursor: pointer
 }
 
 .gallery img:hover {
     transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2)
 }
 
-/* Additional Styles */
 blockquote {
     background: #f9f9f9;
     border-left: 5px solid #667eea;
     padding: 1rem 1.5rem;
     margin: 1.5rem 0;
-    border-radius: 8px;
+    border-radius: 8px
 }
 
 form {
-    max-width: 600px;
+    max-width: 600px
 }
 
-form input, form textarea {
+form input,
+form textarea {
     width: 100%;
     padding: 0.8rem;
     border: 2px solid #ddd;
     border-radius: 8px;
     margin-bottom: 1rem;
     font-family: inherit;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease
 }
 
-form input:focus, form textarea:focus {
+form input:focus,
+form textarea:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #667eea
 }
 
 form button {
@@ -180,30 +191,31 @@ form button {
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease
 }
 
 form button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2)
 }
 
 article {
     margin: 2rem 0;
     padding: 1.5rem;
     background: #f9f9f9;
-    border-radius: 12px;
+    border-radius: 12px
 }
 
-ul, ol {
-    line-height: 2;
+ul,
+ol {
+    line-height: 2
 }
 
 dl {
-    line-height: 2;
+    line-height: 2
 }
 
 dt {
     margin-top: 1rem;
-    color: #1e3c72;
+    color: #1e3c72
 }

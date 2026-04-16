@@ -1,0 +1,42 @@
+:root {
+    --page-background: linear-gradient(135deg, #f8fafc 0%, #eef3ff 45%, #f9f4ee 100%);
+    --surface-color: rgba(255, 255, 255, 0.92);
+    --surface-strong: rgba(255, 255, 255, 0.97);
+}
+
+main {
+    background: var(--surface-strong);
+}
+
+.home-main {
+    background: var(--surface-color);
+}
+
+section,
+.feature-card,
+.stat-card,
+.about-section,
+.gallery-grid img,
+.service-item,
+.testimonial-card,
+.faq-item {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 320px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 220ms ease, transform 220ms ease;
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

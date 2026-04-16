@@ -1,0 +1,25 @@
+{
+  "name": "why-q-personal-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "serve": "gulp serve",
+    "start": "gulp serve"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-svgo": "^4.0.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-useref": "^5.0.0",
+    "gulp-size": "^4.1.1",
+    "fonttools": "^4.0.0"
+  }
+}

@@ -18,9 +18,7 @@ body {
     margin: 0;
     padding: 0;
     color: var(--text-color);
-    /* High quality abstract background */
-    background: url('https://images.unsplash.com/photo-1497250681960-ef04820a3883?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-    background-size: cover;
+    background: linear-gradient(135deg, #f8fafc 0%, #eef3ff 45%, #f9f4ee 100%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;

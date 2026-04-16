@@ -1,0 +1,104 @@
+{
+  "description": "Asset Delivery Configuration for Server Path Management",
+  "assetPath": "/",
+  "version": "1.0.0",
+  "timestamp": "2026-04-16T00:00:00Z",
+  "environment": {
+    "production": {
+      "assetPath": "/static/",
+      "cdnUrl": "https://cdn.example.com/",
+      "cacheControl": "max-age=31536000, immutable"
+    },
+    "staging": {
+      "assetPath": "/staging/",
+      "cdnUrl": "https://staging-cdn.example.com/",
+      "cacheControl": "max-age=86400"
+    },
+    "development": {
+      "assetPath": "/",
+      "cdnUrl": "http://localhost:3000/",
+      "cacheControl": "no-cache"
+    }
+  },
+  "assets": {
+    "styles": [
+      {
+        "name": "site",
+        "file": "css/site.min.css",
+        "size": 0,
+        "gzip": 0,
+        "critical": true
+      }
+    ],
+    "scripts": [
+      {
+        "name": "site",
+        "file": "js/site.min.js",
+        "size": 0,
+        "gzip": 0,
+        "defer": true
+      }
+    ],
+    "fonts": [
+      {
+        "name": "segoe-ui-latin",
+        "file": "fonts/segoe-ui-latin.woff2",
+        "weight": 400,
+        "style": "normal",
+        "display": "swap",
+        "preload": true
+      }
+    ],
+    "images": [
+      {
+        "name": "logo",
+        "file": "logo.png",
+        "format": "png",
+        "responsive": false
+      },
+      {
+        "name": "why-q-logo",
+        "file": "WHY%20Q%20LOGO.png",
+        "format": "png",
+        "responsive": false
+      }
+    ]
+  },
+  "versioning": {
+    "strategy": "content-hash",
+    "format": "[name]-[hash].min.[ext]",
+    "example": "site-a1b2c3d4.min.css"
+  },
+  "optimization": {
+    "minifyCss": true,
+    "minifyJs": true,
+    "optimizeImages": true,
+    "optimizeSvg": true,
+    "subsetFonts": true,
+    "enableGzip": true,
+    "enableBrotli": true
+  },
+  "caching": {
+    "strategy": "cache-first for assets, network-first for html",
+    "ttl": 2592000,
+    "serviceWorkerVersion": "v1"
+  },
+  "headers": {
+    "css": {
+      "Content-Type": "text/css; charset=UTF-8",
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "js": {
+      "Content-Type": "application/javascript; charset=UTF-8",
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "fonts": {
+      "Content-Type": "font/woff2",
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "images": {
+      "Content-Type": "image/png",
+      "Cache-Control": "public, max-age=2592000"
+    }
+  }
+}

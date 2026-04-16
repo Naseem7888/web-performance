@@ -1,0 +1,47 @@
+{
+  "description": "Font Subsetting Configuration Guide",
+  "purpose": "Reduce font file sizes by including only necessary glyphs",
+  "fonts": [
+    {
+      "name": "Segoe UI",
+      "source": "fonts/segoe-ui.ttf",
+      "subsets": {
+        "latin": {
+          "description": "Basic Latin characters (a-z, A-Z, 0-9, punctuation)",
+          "glyphs": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#$%&'()*+,-./:;?@[\\]^_`{|}~",
+          "target": "fonts/segoe-ui-latin.woff2",
+          "format": "woff2"
+        },
+        "extended": {
+          "description": "Latin Extended (accented characters)",
+          "glyphs": "àáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ",
+          "target": "fonts/segoe-ui-ext.woff2",
+          "format": "woff2"
+        }
+      }
+    }
+  ],
+  "tools": {
+    "glyphhanger": {
+      "install": "npm install -g glyphhanger",
+      "usage": "glyphhanger --formats=woff2 --subset=latin fonts/segoe-ui.ttf",
+      "docs": "https://www.zachleat.com/web/glyphhanger/"
+    },
+    "fonttools": {
+      "install": "pip install fonttools",
+      "usage": "pyftsubset input.ttf --output-file=output.woff2 --flavor=woff2 --unicodes=U+0020-007F",
+      "docs": "https://fonttools.readthedocs.io"
+    }
+  },
+  "css_example": {
+    "description": "Example CSS for loading subsetted fonts",
+    "code": "@font-face {\n  font-family: 'Segoe UI Subset';\n  src: url('/fonts/segoe-ui-latin.woff2') format('woff2');\n  font-weight: 400;\n  font-style: normal;\n  font-display: swap;\n}\n\nbody {\n  font-family: 'Segoe UI Subset', sans-serif;\n}"
+  },
+  "performance_tips": [
+    "Use font-display: swap to avoid font blocking",
+    "Subset to only necessary character ranges",
+    "Use WOFF2 format for best compression",
+    "Load critical fonts with preload",
+    "Cache subsetted fonts aggressively"
+  ]
+}

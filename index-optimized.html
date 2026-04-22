@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHY Q - Home</title>
+    
+    <!-- Resource Hints for Performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="preload" as="style" href="style.css">
+    <link rel="preload" as="font" href="fonts/segoe-ui-subset.woff2" type="font/woff2" crossorigin>
+    
+    <!-- CRITICAL CSS - Inlined for above-the-fold (FCP optimization) -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        :root {
+            --primary-color: #6C63FF;
+            --secondary-color: #4CAF50;
+            --accent-color: #FF6584;
+            --text-color: #333333;
+            --text-light: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #f8fafc 0%, #eef3ff 45%, #f9f4ee 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Mobile-first header styles */
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            height: auto;
+            max-width: 60px;
+            width: 100%;
+            display: block;
+        }
+
+        header h1 {
+            background: linear-gradient(135deg, #6C63FF 0%, #4CAF50 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        /* Mobile-first navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 0.75rem;
+            text-align: center;
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        /* Hero section critical styles */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(76, 175, 80, 0.1) 100%);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .big-logo {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .welcome-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .welcome-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Tablet and desktop - enhance styles */
+        @media (min-width: 768px) {
+            header { padding: 1.5rem 0; }
+            .header-content { flex-direction: row; gap: 1.5rem; }
+            .header-logo { max-width: 80px; }
+            header h1 { font-size: 2.2rem; }
+            nav { font-size: 1rem; gap: 1rem; }
+            .hero-section { padding: 3rem 2rem; }
+            .welcome-title { font-size: 2.2rem; }
+        }
+
+        @media (min-width: 1024px) {
+            header { padding: 2rem 0; }
+            .header-logo { max-width: 100px; }
+            header h1 { font-size: 2.8rem; }
+            .welcome-title { font-size: 2.8rem; }
+        }
+
+        /* Optimize font loading - show text immediately */
+        @font-face {
+            font-family: 'Segoe UI Subset';
+            src: url('fonts/segoe-ui-subset.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap; /* Show system font while loading */
+        }
+    </style>
+    
+    <!-- Non-critical CSS deferred - loaded async -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    
+    <!-- Google Analytics - Deferred to not block page load -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEBRYDWHW5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-EEBRYDWHW5');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <!-- Optimized image: Using WebP with fallback, lazy loading, responsive -->
+            <picture>
+                <source srcset="images/why-q-logo-60w.webp 60w, images/why-q-logo-100w.webp 100w" type="image/webp">
+                <img 
+                    src="images/why-q-logo-100w.png" 
+                    alt="WHY Q Logo"
+                    class="header-logo"
+                    width="100"
+                    height="100"
+                    loading="lazy"
+                    decoding="async">
+            </picture>
+            <h1>WHY Q</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Team</a>
+        <a href="blog.html">Blog</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="faq.html">FAQ</a>
+        <a href="policy.html">Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main class="home-main">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <!-- Optimized hero image with responsive sizes and lazy loading -->
+                <picture>
+                    <source srcset="images/why-q-logo-200w.webp 200w, images/why-q-logo-400w.webp 400w" type="image/webp">
+                    <img 
+                        src="images/why-q-logo-400w.png" 
+                        alt="WHY Q Logo"
+                        class="big-logo"
+                        width="400"
+                        height="400"
+                        loading="lazy"
+                        decoding="async">
+                </picture>
+                <h2 class="welcome-title">Welcome to WHY Q</h2>
+                <p class="welcome-text">
+                    Your premier destination for quality answers and exceptional service. Discover excellence in every interaction.
+                </p>
+            </div>
+        </section>
+
+        <!-- Additional sections follow... -->
+    </main>
+
+    <!-- Deferred main JavaScript for better performance -->
+    <script src="scripts/main.js" defer></script>
+    
+    <!-- Performance monitoring - deferred -->
+    <script src="scripts/performance.js" defer></script>
+</body>
+</html>

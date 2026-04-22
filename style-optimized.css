@@ -1,0 +1,564 @@
+/* 
+   WHY Q Website - Mobile-First Responsive CSS with Critical CSS Extraction
+   Performance Optimized: Critical CSS for above-the-fold is inlined in HTML head
+   Non-critical CSS uses progressive enhancement via media queries
+*/
+
+/* ============================================
+   1. CRITICAL CSS - ABOVE-THE-FOLD ONLY
+   (This is inlined in HTML for FCP optimization)
+   ============================================ */
+
+:root {
+    --primary-color: #6C63FF;
+    --secondary-color: #4CAF50;
+    --accent-color: #FF6584;
+    --text-color: #333333;
+    --text-light: #ffffff;
+    --bg-light: #f8fafc;
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --transition: all 0.3s ease;
+    --safe-area: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(135deg, #f8fafc 0%, #eef3ff 45%, #f9f4ee 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   2. MOBILE-FIRST HEADER & NAVIGATION
+   (Responsive from 320px+)
+   ============================================ */
+
+/* Header - Mobile First */
+header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    max-width: 100%;
+    padding: 0 var(--safe-area);
+}
+
+.header-logo {
+    height: auto;
+    max-width: 60px;
+    width: 100%;
+    display: block;
+    transition: var(--transition);
+}
+
+.header-logo:hover {
+    transform: scale(1.05);
+}
+
+header h1 {
+    background: linear-gradient(135deg, #6C63FF 0%, #4CAF50 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Navigation - Mobile First */
+nav {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--secondary-color);
+    background: rgba(76, 175, 80, 0.1);
+}
+
+/* ============================================
+   3. MOBILE-FIRST MAIN CONTENT
+   ============================================ */
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+/* Hero Section - Mobile First */
+.hero-section {
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(76, 175, 80, 0.1) 100%);
+    padding: 2rem var(--safe-area);
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.big-logo {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1.5rem;
+    transition: var(--transition);
+}
+
+.big-logo:hover {
+    transform: scale(1.05);
+}
+
+.welcome-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+.welcome-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   4. CONTENT CARDS - Mobile First
+   ============================================ */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem var(--safe-area);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+}
+
+.card-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* ============================================
+   5. BUTTONS - Mobile First
+   ============================================ */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
+}
+
+/* ============================================
+   6. FOOTER - Mobile First
+   ============================================ */
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--text-light);
+    padding: 2rem var(--safe-area);
+    margin-top: auto;
+    text-align: center;
+    border-top: 1px solid var(--glass-border);
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   7. UTILITIES - Mobile First
+   ============================================ */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--safe-area);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* ============================================
+   8. TABLET BREAKPOINT (768px+)
+   Progressive Enhancement
+   ============================================ */
+
+@media (min-width: 768px) {
+    :root {
+        --safe-area: 2rem;
+    }
+
+    /* Tablet Header */
+    header {
+        padding: 1.5rem 0;
+    }
+
+    .header-content {
+        flex-direction: row;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .header-logo {
+        max-width: 80px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+        letter-spacing: 3px;
+    }
+
+    /* Tablet Navigation */
+    nav {
+        font-size: 1rem;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    nav a {
+        padding: 0.75rem 1rem;
+    }
+
+    /* Tablet Hero */
+    .hero-section {
+        padding: 3rem 2rem;
+    }
+
+    .welcome-title {
+        font-size: 2.2rem;
+    }
+
+    .welcome-text {
+        font-size: 1.1rem;
+    }
+
+    .big-logo {
+        max-width: 300px;
+    }
+
+    /* Tablet Cards - 2 Column Grid */
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 3rem 2rem;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+    }
+
+    /* Tablet Spacing */
+    .card {
+        padding: 2rem;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* ============================================
+   9. DESKTOP BREAKPOINT (1024px+)
+   Full Progressive Enhancement
+   ============================================ */
+
+@media (min-width: 1024px) {
+    :root {
+        --safe-area: 3rem;
+    }
+
+    /* Desktop Header */
+    header {
+        padding: 2rem 0;
+    }
+
+    .header-logo {
+        max-width: 100px;
+    }
+
+    header h1 {
+        font-size: 2.8rem;
+    }
+
+    /* Desktop Navigation */
+    nav {
+        font-size: 1.1rem;
+        gap: 1.5rem;
+    }
+
+    /* Desktop Hero */
+    .hero-section {
+        padding: 4rem 3rem;
+    }
+
+    .welcome-title {
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .big-logo {
+        max-width: 400px;
+    }
+
+    /* Desktop Cards - 3 Column Grid */
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        padding: 4rem 3rem;
+    }
+
+    .card {
+        padding: 2.5rem;
+    }
+
+    .card-title {
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 2.8rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* ============================================
+   10. LARGE DESKTOP (1440px+)
+   Full Enhancement
+   ============================================ */
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1320px;
+    }
+
+    header h1 {
+        font-size: 3.2rem;
+    }
+
+    .welcome-title {
+        font-size: 3.2rem;
+    }
+
+    .section-title {
+        font-size: 3.2rem;
+    }
+}
+
+/* ============================================
+   11. ACCESSIBILITY & PRINT
+   ============================================ */
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    :root {
+        --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+        font-weight: 900;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    header,
+    nav,
+    footer {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* ============================================
+   12. PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* Optimize font loading - FOUT prevention */
+@font-face {
+    font-family: 'Segoe UI Subset';
+    src: url('fonts/segoe-ui-subset.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap; /* Show fallback while font loads */
+    size-adjust: 95%;
+}
+
+/* Lazy loading images - optimize for Core Web Vitals */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Reduce CLS (Cumulative Layout Shift) */
+img,
+picture {
+    aspect-ratio: auto; /* Helps browser reserve space */
+}
+
+/* Optimize form inputs */
+input,
+textarea,
+select {
+    font-size: 1rem; /* Prevent iOS zoom */
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+/* ============================================
+   13. DARK MODE SUPPORT (Optional Enhancement)
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #e0e0e0;
+        --bg-light: #1a1a1a;
+    }
+
+    body {
+        background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 45%, #16213e 100%);
+    }
+
+    .card {
+        background: rgba(30, 30, 30, 0.8);
+    }
+
+    nav a:hover,
+    nav a.active {
+        background: rgba(76, 175, 80, 0.2);
+    }
+}
+
+/* ============================================
+   END OF MOBILE-FIRST CSS
+   ============================================ */
